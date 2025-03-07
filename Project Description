@@ -1,0 +1,77 @@
+The Online Auction Platform is a distributed web application designed to facilitate real-time bidding and secure transactions for products. This system leverages a microservices architecture to split key functionalities into dedicated services, ensuring scalability, maintainability, and flexibility. The platform offers features ranging from user management and product cataloging to live auctions and bid handling—all while enforcing robust security measures across the board.
+
+Architecture and Components
+The system is architected as a collection of loosely coupled microservices that communicate through well-defined APIs. Here’s a breakdown of the primary components:
+
+API Gateway & Authentication Filter
+
+Role: Serves as the entry point for all incoming HTTP requests. The gateway handles initial request validation, enforces security protocols (via the authentication filter), and routes requests to the appropriate backend services.
+
+Features:
+
+Request rate limiting and logging
+
+Authentication and token verification
+
+Load distribution among various services
+
+Service Registry
+
+Role: Maintains an up-to-date map of all the available services and their instances. This registry enables dynamic service discovery, ensuring that the API Gateway directs requests to healthy service instances.
+
+Features:
+
+Real-time tracking of microservice availability
+
+Support for scaling out individual services
+
+User Service
+
+Role: Manages user-related operations including registration, authentication, profile management, and access control.
+
+Features:
+
+Secure user authentication (login, logout) using modern cryptographic standards
+
+Role-based access management to enforce permissions across the platform
+
+Auction Service
+
+Role: Central to the auction operations, this service handles the creation, scheduling, and management of auctions.
+
+Features:
+
+Auction lifecycle management (initiation, in-progress, closing)
+
+Real-time event handling to broadcast auction status updates
+
+Bid Service
+
+Role: Manages all interactions related to bids placed on auctions.
+
+Features:
+
+Receiving bid submissions and validating them against the current highest bid
+
+Notifying the Auction Service in case of new valid bids
+
+Handling bid history and rollback in case of errors
+
+Product Service
+
+Role: Provides product information essential for both listing items in an auction and maintaining inventory status.
+
+Features:
+
+Maintaining detailed product catalogs with descriptions, images, and status updates
+
+Integrating with auction listings to provide necessary details for the bidding process
+
+Interaction Flow
+Request Initiation: A user interacts with the platform (web or mobile frontend), and their request is sent to the API Gateway. The gateway applies authentication filters to secure the connection.
+
+Service Discovery: Once validated, the API Gateway consults the Service Registry to identify the appropriate microservice for handling the request—be it user authentication, auction creation, bid submission, or fetching product details.
+
+Processing and Communication: The assigned microservice processes the request. For example, bid submissions are handled by the Bid Service, which communicates with the Auction Service to update the current bid status. Product information requests are directed to the Product Service.
+
+Response Delivery: After processing, responses flow back through the API Gateway to the user, ensuring consistent and secure communication across services.
