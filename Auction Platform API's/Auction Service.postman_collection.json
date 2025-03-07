@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "a45d9660-734d-4465-a71f-166d45bec83a",
+		"name": "Auction Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41362366"
+	},
+	"item": [
+		{
+			"name": "Create Auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"startDate\": \"2025-02-17T13:30:00\",\r\n  \"endDate\": \"2025-02-12T11:30:00\",\r\n  \"startPrice\": 100.0,\r\n  \"currentHighestBid\": 150.0,\r\n  \"minBidAmount\": 10.0,\r\n  \"status\": \"UPCOMING\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/auction/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Auction",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"productId\": 1,\r\n  \"description\": \"Antique Vase\",\r\n  \"sellerName\": \"Jane Smith\",\r\n  \"startDate\": \"2025-02-04T11:30:00\",\r\n  \"endDate\": \"2025-02-10T11:30:00\",\r\n  \"startPrice\": 100.0,\r\n  \"currentHighestBid\": 150.0,\r\n  \"minBidAmount\": 10.0,\r\n  \"status\": \"UPCOMING\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/auction/update?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Auction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/auction/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/auction?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "End Auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/auction/end?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"end"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Auction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/auction/start?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"start"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Auction",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/auction/delete?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"auction",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

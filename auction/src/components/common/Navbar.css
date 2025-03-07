@@ -1,0 +1,37 @@
+.navbar-nav.mx-auto .nav-item {
+  margin: 0 30px; /* Increased from 20px to 30px */
+}
+
+/* Adjust font sizes for icons */
+.navbar-nav .nav-link .fa-user-circle {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link .fa-caret-down {
+  font-size: 1.1rem;
+}
+
+/* Hover effect for navigation links */
+.navbar-nav .nav-link:hover {
+  color: #ddd;
+}
+
+/* Center the navigation items */
+.navbar-nav.mx-auto {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly; /* Distributes items evenly */
+}
+
+/* Ensure the dropdown is hidden by default */
+.navbar-nav .dropdown .dropdown-menu {
+  display: none;
+}
+
+/* Show dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+}

@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "5ec05bcf-2140-48b1-bdd9-38f18d9f0864",
+		"name": "User Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41362366"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"johndoe\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"Password123\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"birthDate\": \"01-01-1990\",\r\n  \"gender\": \"Male\",\r\n  \"role\": \"ADMIN\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"johndoe\",\r\n    \"password\":\"Password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/user/delete?userName=johndoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"user",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "johndoe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"johndoe\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Caster\",\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"Password123\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"birthDate\": \"01-01-1990\",\r\n  \"gender\": \"Male\",\r\n  \"role\": \"SELLER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/user/update/johndoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"user",
+						"update",
+						"johndoe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

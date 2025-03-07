@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "f98bb4cc-b155-4a13-b934-7060ef8d207f",
+		"name": "Bid Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41362366"
+	},
+	"item": [
+		{
+			"name": "Add Bid",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bidderName\": \"johndoe\",\r\n  \"auctionId\": 1,\r\n  \"bidAmount\": 220.0,\r\n  \"bidTime\": \"2025-02-04T11:30:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8199/bids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"bids"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Highest Bid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/bids/highest?auctionId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"bids",
+						"highest"
+					],
+					"query": [
+						{
+							"key": "auctionId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of Bids",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/bids/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"bids",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Highest Bidder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8199/bids?auctionId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8199",
+					"path": [
+						"bids"
+					],
+					"query": [
+						{
+							"key": "auctionId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
